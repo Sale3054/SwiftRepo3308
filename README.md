@@ -38,4 +38,5 @@ Collaboration Tool:
 * Slack 
 
 Proposed Architecture: 
-* For the front-end, we will be using the built-in tools that the iOS development environment supplies to build a UI. For the back-end, we will be using a multitude of technologies, including the Arduino development environment, Amazon Alexa Voice Services, a SQL Database, and other backend technologies.
+* For the front-end, we will be using the built-in tools that the iOS development environment supplies to build a UI. 
+* For the back-end, we will be using a multitude of technologies, including the Arduino development environment, Amazon Alexa Voice Services, a SQL Database, and other backend technologies.
