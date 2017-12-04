@@ -2,63 +2,40 @@
 import json
 import unicodedata
 import sys
+import cgi
 from urllib.request import urlopen
 
-print 'content-type: text/html'
-print
+print('content-type: text/html')
+print()
 
-print '''
+print( '''
 Hello World!
 
+<body>
+<form name="search" action="/cgi-bin/searchpage.py" method="get">
+Search for your movie: <input type="text" name="searchbox">
+<input type="submit" value="Submit">
+</form> 
 
-<input type="text" name="search" placeholder="Search..">
-<head>
-	<title>Movie matching utility</title>
-	<link rel="stylesheet" type="text/css" href="./style.css">.
-</head>
-
-For the login page:
-
-Select a Genre!
-<label class="container"> Action
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-
-<label class="container"> Comedy
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-<label class="container"> Horror
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-<label class="container"> Romance
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-'''
+<a href="http://localhost:8000/cgi-bin/login.py">login</a>
+''')
 
 print ('''
 <script>
 $(document).ready(function()
 {
 ''')
-
-title = "The Internship"
+form = cgi.FieldStorage()
+title = form.getvalue('searchbox')
 title = title.replace(" ", "+")
 response = urlopen("http://www.omdbapi.com/?apikey=cc47980e&t={}".format(title)).read().decode('utf8')
 data = json.loads(response)
-print('Printing: ', data)
 
 print ('''
 });
 </script>
 ''')
-
+print(json.dump(data, sys.stdout))
 print ('''
 </body>
 </html>
