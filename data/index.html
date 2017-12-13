@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+	<p id="title">Movie title</p>
+	<p id="year">Movie year</p>
+	<p id="rating">Movie rating</p>
+	<!-- <p id="pic">Movie pic</p> -->
+</body>
+
+<script type="text/javascript">
+	$.getJSON('http://www.omdbapi.com/?apikey=cc47980e&t=The+internship', 
+    function(data, textStatus, jqXHR) {
+    	console.log(data)
+    	console.log(data["Title"])
+    	console.log(data["Year"])
+    	console.log(data["imdbRating"])
+
+    	document.getElementById("title").innerHTML = data["Title"]
+    	document.getElementById("year").innerHTML = data["Year"]
+    	document.getElementById("rating").innerHTML = data["imdbRating"]
+    }
+)
+</script>
+</html>
