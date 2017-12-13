@@ -11,6 +11,7 @@
 	<p id="year">Movie year</p>
 	<p id="rating">Movie rating</p>
 
+	<img id="myImg" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU2NjQ2MTUzNF5BMl5BanBnXkFtZTgwNjQxNzQ0MzI@._V1_SX300.jpg" alt="The Pulpit Rock">
 	<!-- <button onclick="">Click me</button> -->
 
 	<!-- <p id="pic">Movie pic</p> -->
@@ -48,10 +49,12 @@
     		console.log(data["Title"])
     		console.log(data["Year"])
     		console.log(data["imdbRating"])
+    		console.log(data["Poster"])
 
     		document.getElementById("title").innerHTML = data["Title"]
     		document.getElementById("year").innerHTML = data["Year"]
     		document.getElementById("rating").innerHTML = data["imdbRating"]
+    		document.getElementById("myImg").src = data["Poster"]
     	}
 		)
 	}
