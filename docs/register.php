@@ -27,6 +27,8 @@ if ( $result->num_rows > 0 ) {
 }
 else { // Email doesn't already exist in a database, proceed...
 
+
+    echo "working...";;
     // active is 0 by DEFAULT (no need to include it here)
     $sql = "INSERT INTO users (first_name, last_name, email, password, hash) " 
             . "VALUES ('$first_name','$last_name','$email','$password', '$hash')";

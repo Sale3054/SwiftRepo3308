@@ -1,8 +1,3 @@
-<?php 
-/* Main page with two forms: sign up and log in */
-require 'db.php';
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 }
 ?>
 <body>
+
+
+<div class="topnav">
+  <a class="active" href="home.php">Home</a>
+  <a href= "index.php">Login / Sign Up</a>
+  <a href= "about.html">About Us</a>
+</div>
+
   <div class="form">
       
       <ul class="tab-group">
